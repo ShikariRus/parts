@@ -1,0 +1,116 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"О Компании", 
+		"/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Подбор по VIN", 
+		"/vin", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Каталоги запчастей", 
+		"/catalogs", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Ассортимент", 
+		"/catalog", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Расходники для ТО", 
+		"/parts", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Ремонт и техобслуживание", 
+		"/repair", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Доставка", 
+		"/delivery", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Оплата", 
+		"/payment", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Возврат", 
+		"/return", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Поставщикам", 
+		"/suppliers", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Партнерство и сотрудничество", 
+		"/partners", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Акции", 
+		"/promotions", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Благотворительность", 
+		"/charity", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Новости", 
+		"/news", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Как оформить заказ", 
+		"/how-to-checkout", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"/contacts", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>
