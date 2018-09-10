@@ -177,7 +177,6 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
 				{
 					form.querySelector('input[type=hidden][name=sessid]').value = BX.bitrix_sessid();
 				}
-
 				BX.ajax.submit(BX('bx-soa-order-form'), BX.proxy(this.saveOrder, this));
 			}
 			else

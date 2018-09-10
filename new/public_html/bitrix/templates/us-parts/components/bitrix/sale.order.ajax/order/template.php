@@ -339,8 +339,8 @@ else
                 <div class="block-body">
                     <label class="form-label">Контактное лицо:</label>
                     <div class="row">
-                        <input type="text" id="checkout-name" class="form-input half-width" name="ORDER_PROP_1" value="<?=$arUser['NAME']?>" placeholder="Имя" required>
-                        <input type="text" id="checkout-surname" class="form-input half-width" name="checkout-surname" value="<?=$arUser['LAST_NAME']?>" placeholder="Фамилия" required>
+                        <input type="text" id="soa-property-1" class="form-input half-width bx-soa-customer-input" name="ORDER_PROP_1" value="<?=$arUser['NAME']?>" placeholder="Имя" required>
+                        <input type="text" id="checkout-surname" class="form-input half-width" name="ORDER_PROP_20" value="<?=$arUser['LAST_NAME']?>" placeholder="Фамилия" required>
                     </div>
                     <div class="row">
                         <input type="text" id="checkout-email" class="form-input half-width" name="ORDER_PROP_2" value="<?=$arUser['EMAIL']?>" placeholder="Адрес эллектронной почты" required>
@@ -349,7 +349,7 @@ else
 
                     <label class="form-label">Адрес доставки:</label>
                     <div class="row">
-                        <input type="text" id="soa-property-7" class="form-input full-width end-block" name="ORDER_PROP_7" value="<?=$address[0]?>" placeholder="пример: г.Москва Дмитровское шоссе 102к2с3" required>
+                        <input type="text" id="soa-property-7" class="form-input full-width end-block" name="ORDER_PROP_7" value="<?=$arUser['UF_ADDRESS']?>" placeholder="пример: г.Москва Дмитровское шоссе 102к2с3" required>
                     </div>
                 </div>
                 <div class="block-head">Шаг 2 из 5. <b>Выберите способ достаки</b></div>
@@ -480,12 +480,89 @@ else
             signedParamsString = '<?=$signedParams?>';
             siteId = '<?=$component->getSiteId()?>';
             ajaxUrl = '<?=$component->getPath().'/ajax.php'?>';
-            $('[data-save-button]').on('click', function (event) {
-                doSaveAction();
-            });
+            USER_CONSENT = '<?=$arParams['USER_CONSENT']?>';
+            orderSaveAllowed = false;
+            BX.bind(BX('bx-soa-order-form').querySelector('[data-save-button]'), 'click', BX.proxy(clickOrderSaveAction, this));
+            function clickOrderSaveAction (event)
+            {
+                allowOrderSave();
+
+                if (USER_CONSENT === 'Y' && BX.UserConsent)
+                {
+                    BX.onCustomEvent('bx-soa-order-save', []);
+                }
+                else
+                {
+                    doSaveAction();
+                }
+
+                return BX.PreventDefault(event);
+            }
+            function isOrderSaveAllowed ()
+            {
+                return orderSaveAllowed === true;
+            }
+            function allowOrderSave()
+            {
+                orderSaveAllowed = true;
+            }
+            function isValidForm()
+            {
+                if (!this.options.propertyValidation)
+                    return true;
+
+                var regionErrors = this.isValidRegionBlock(),
+                    propsErrors = this.isValidPropertiesBlock(),
+                    navigated = false, tooltips, i;
+
+                if (regionErrors.length)
+                {
+                    navigated = true;
+                    this.animateScrollTo(this.regionBlockNode, 800, 50);
+                }
+
+                if (propsErrors.length && !navigated)
+                {
+                    if (this.activeSectionId == this.propsBlockNode.id)
+                    {
+                        tooltips = this.propsBlockNode.querySelectorAll('div.tooltip');
+                        for (i = 0; i < tooltips.length; i++)
+                        {
+                            if (tooltips[i].getAttribute('data-state') == 'opened')
+                            {
+                                this.animateScrollTo(BX.findParent(tooltips[i], {className: 'form-group bx-soa-customer-field'}), 800, 50);
+                                break;
+                            }
+                        }
+                    }
+                    else
+                        this.animateScrollTo(this.propsBlockNode, 800, 50);
+                }
+
+                if (regionErrors.length)
+                {
+                    this.showError(this.regionBlockNode, regionErrors);
+                    BX.addClass(this.regionBlockNode, 'bx-step-error');
+                }
+
+                if (propsErrors.length)
+                {
+                    if (this.activeSectionId !== this.propsBlockNode.id)
+                        this.showError(this.propsBlockNode, propsErrors);
+
+                    BX.addClass(this.propsBlockNode, 'bx-step-error');
+                }
+
+                return !(regionErrors.length + propsErrors.length);
+            }
             function doSaveAction()
             {
-                sendRequest('saveOrderAjax');
+                if (isOrderSaveAllowed())
+                {
+                    // this.reachGoal('order');
+                    sendRequest('saveOrderAjax');
+                }
+
             }
 
             function sendRequest(action, actionData) {
@@ -500,8 +577,7 @@ else
                     {
                         form.querySelector('input[type=hidden][name=sessid]').value = BX.bitrix_sessid();
                     }
-
-                    BX.ajax.submit(BX('bx-soa-order-form'), BX.proxy(this.saveOrder, this));
+                    BX.ajax.submit(BX('bx-soa-order-form'), BX.proxy(saveOrder, this));
                 }
                 else
                 {
@@ -526,6 +602,21 @@ else
                 }
             }
         });
+        function saveOrder(result)
+        {
+            // safari mobile fix
+            result = result.replace(/<a href="\S*">(\S*)<\/a>/g, '$1');
+
+            var res = BX.parseJSON(result), redirected = false;
+            if (res && res.order)
+            {
+                result = res.order;
+                if (result.REDIRECT_URL && result.REDIRECT_URL.length)
+                {
+                    document.location.href = result.REDIRECT_URL;
+                }
+            }
+        }
         BX.saleOrderAjax.init({
             'source':'/bitrix/components/bitrix/sale.order.ajax/get.php',
             'cityTypeId':'3',

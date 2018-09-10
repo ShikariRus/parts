@@ -8037,36 +8037,36 @@ BX.namespace('BX.Sale.OrderAjaxComponent');
 
 		totalBlockFixFont: function()
 		{
-			var totalNode = this.totalInfoBlockNode.querySelector('.bx-soa-cart-total-line.bx-soa-cart-total-line-total'),
-				buttonNode, target, objList = [];
-
-			if (totalNode)
-			{
-				target = BX.lastChild(totalNode);
-				objList.push({
-					node: target,
-					maxFontSize: 28,
-					smallestValue: false,
-					scaleBy: target.parentNode
-				});
-			}
-
-			if (this.params.SHOW_TOTAL_ORDER_BUTTON == 'Y')
-			{
-				buttonNode = this.totalInfoBlockNode.querySelector('.bx-soa-cart-total-button-container');
-				if (buttonNode)
-				{
-					target = BX.lastChild(buttonNode);
-					objList.push({
-						node: target,
-						maxFontSize: 18,
-						smallestValue: false
-					});
-				}
-			}
-
-			if (objList.length)
-				BX.FixFontSize.init({objList: objList, onAdaptiveResize: true});
+			// var totalNode = this.totalInfoBlockNode.querySelector('.bx-soa-cart-total-line.bx-soa-cart-total-line-total'),
+			// 	buttonNode, target, objList = [];
+			//
+			// if (totalNode)
+			// {
+			// 	target = BX.lastChild(totalNode);
+			// 	objList.push({
+			// 		node: target,
+			// 		maxFontSize: 28,
+			// 		smallestValue: false,
+			// 		scaleBy: target.parentNode
+			// 	});
+			// }
+			//
+			// if (this.params.SHOW_TOTAL_ORDER_BUTTON == 'Y')
+			// {
+			// 	buttonNode = this.totalInfoBlockNode.querySelector('.bx-soa-cart-total-button-container');
+			// 	if (buttonNode)
+			// 	{
+			// 		target = BX.lastChild(buttonNode);
+			// 		objList.push({
+			// 			node: target,
+			// 			maxFontSize: 18,
+			// 			smallestValue: false
+			// 		});
+			// 	}
+			// }
+			//
+			// if (objList.length)
+			// 	BX.FixFontSize.init({objList: objList, onAdaptiveResize: true});
 		},
 
 		setAnalyticsDataLayer: function(action, id)
