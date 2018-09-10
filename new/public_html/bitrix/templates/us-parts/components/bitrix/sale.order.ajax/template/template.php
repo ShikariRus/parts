@@ -554,7 +554,7 @@ else
 	?>
 	<script>
 		BX.message(<?=CUtil::PhpToJSObject($messages)?>);
-		BX.Sale.OrderAjaxComponentCustom.init({
+		BX.Sale.OrderAjaxComponent.init({
 			result: <?=CUtil::PhpToJSObject($arResult['JS_DATA'])?>,
 			locations: <?=CUtil::PhpToJSObject($arResult['LOCATIONS'])?>,
 			params: <?=CUtil::PhpToJSObject($arParams)?>,
@@ -621,8 +621,8 @@ else
 			<script src="<?=$scheme?>://api-maps.yandex.ru/2.1.50/?load=package.full&lang=<?=$locale?>"></script>
 			<script>
 				(function bx_ymaps_waiter(){
-					if (typeof ymaps !== 'undefined' && BX.Sale && BX.Sale.OrderAjaxComponentCustom)
-						ymaps.ready(BX.proxy(BX.Sale.OrderAjaxComponentCustom.initMaps, BX.Sale.OrderAjaxComponentCustom));
+					if (typeof ymaps !== 'undefined' && BX.Sale && BX.Sale.OrderAjaxComponent)
+						ymaps.ready(BX.proxy(BX.Sale.OrderAjaxComponent.initMaps, BX.Sale.OrderAjaxComponent));
 					else
 						setTimeout(bx_ymaps_waiter, 100);
 				})();
@@ -641,8 +641,8 @@ else
 			<script>
 				function bx_gmaps_waiter()
 				{
-					if (BX.Sale && BX.Sale.OrderAjaxComponentCustom)
-						BX.Sale.OrderAjaxComponentCustom.initMaps();
+					if (BX.Sale && BX.Sale.OrderAjaxComponent)
+						BX.Sale.OrderAjaxComponent.initMaps();
 					else
 						setTimeout(bx_gmaps_waiter, 100);
 				}
@@ -661,7 +661,7 @@ else
 					return;
 
 				if (typeof window['yaCounter<?=$arParams['YM_GOALS_COUNTER']?>'] !== 'undefined')
-					BX.Sale.OrderAjaxComponentCustom.reachGoal('initialization');
+					BX.Sale.OrderAjaxComponent.reachGoal('initialization');
 				else
 					setTimeout(function(){bx_counter_waiter(++i)}, 100);
 			})();

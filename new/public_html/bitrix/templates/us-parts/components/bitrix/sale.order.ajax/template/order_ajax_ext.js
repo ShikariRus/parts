@@ -1,15 +1,16 @@
 (function () {
     'use strict';
+
     var initParent = BX.Sale.OrderAjaxComponent.init,
         getBlockFooterParent = BX.Sale.OrderAjaxComponent.getBlockFooter,
         editOrderParent = BX.Sale.OrderAjaxComponent.editOrder
     ;
 
-    BX.namespace('BX.Sale.OrderAjaxComponentCustom');
+    BX.namespace('BX.Sale.OrderAjaxComponentExt');
 
-    BX.Sale.OrderAjaxComponentCustom = BX.Sale.OrderAjaxComponent;
+    BX.Sale.OrderAjaxComponentExt = BX.Sale.OrderAjaxComponent;
 
-    BX.Sale.OrderAjaxComponentCustom.init = function (parameters) {
+    BX.Sale.OrderAjaxComponentExt.init = function (parameters) {
         initParent.apply(this, arguments);
 
         var editSteps = this.orderBlockNode.querySelectorAll('.bx-soa-editstep'), i;
@@ -21,7 +22,7 @@
 
     };
 
-    BX.Sale.OrderAjaxComponentCustom.getBlockFooter = function (node) {
+    BX.Sale.OrderAjaxComponentExt.getBlockFooter = function (node) {
         var parentNodeSection = BX.findParent(node, {className: 'bx-soa-section'});
 
         getBlockFooterParent.apply(this, arguments);
@@ -34,21 +35,32 @@
     };
 
 
-    BX.Sale.OrderAjaxComponentCustom.editOrder = function (section) {
+    BX.Sale.OrderAjaxComponentExt.editOrder = function (section) {
 
         editOrderParent.apply(this, arguments);
+
 
         var sections = this.orderBlockNode.querySelectorAll('.bx-soa-section.bx-active'), i;
 
         for (i in sections) {
             if (sections.hasOwnProperty(i)) {
-                if (!(/bx-soa-auth|bx-soa-properties|bx-soa-basket/.test(sections[i].id))) {
-                    sections[i].classList.add('bx-soa-section-hide');
+
+                if (!(/bx-soa-auth|bx-soa-region|bx-soa-basket/.test(sections[i].id))) {
+                    this.editSection(sections[i]);
+                    this.show(sections[i]);
                 }
             }
+
         }
 
-        this.show(BX('bx-soa-properties'));
+        this.editTotalBlock();
+        this.totalBlockFixFont();
+
+        if (!this.result.SHOW_AUTH)
+            this.changeVisibleContent();
+
+        this.showErrors(this.result.ERROR, false);
+        this.showWarnings();
 
         this.editActiveBasketBlock(true);
 
@@ -61,7 +73,7 @@
     };
 
 
-    BX.Sale.OrderAjaxComponentCustom.initFirstSection = function (parameters) {
+    BX.Sale.OrderAjaxComponentExt.initFirstSection = function (parameters) {
 
     };
 

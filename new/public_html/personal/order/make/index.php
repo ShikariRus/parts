@@ -101,6 +101,7 @@ $APPLICATION->SetTitle("Заказы");
     ),
     false
 );?>
+
         <div class="block-title bold">Условия поставки</div>
         <div class="text">
                 <p class="bold title">Оплатить Вы можете:</p>

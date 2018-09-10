@@ -436,9 +436,9 @@ BX.saleOrderAjax = { // bad solution, actually, a singleton at the page
 					notFoundCallback.call(ctx);
 				}
 			},
-			onfailure: function(type, e){
-				// on error do nothing
-			}
+			// onfailure: function(type, e){
+			// 	// on error do nothing
+			// }
 		});
 	}
 };
