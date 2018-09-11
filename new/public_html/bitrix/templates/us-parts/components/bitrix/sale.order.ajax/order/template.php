@@ -285,7 +285,7 @@ switch (LANGUAGE_ID)
 //$this->addExternalCss('/bitrix/css/main/bootstrap.css');
 //$APPLICATION->SetAdditionalCSS('/bitrix/css/main/themes/'.$arParams['TEMPLATE_THEME'].'/style.css', true);
 //$APPLICATION->SetAdditionalCSS($templateFolder.'/style.css', true);
-//$this->addExternalJs($templateFolder.'/order_ajax.js');
+$this->addExternalJs($templateFolder.'/order_ajax.js');
 \Bitrix\Sale\PropertyValueCollection::initJs();
 $this->addExternalJs($templateFolder.'/script.js');
 ?>
@@ -327,7 +327,7 @@ else
         <input type="hidden" name="<?=$arParams['ACTION_VARIABLE']?>" value="saveOrderAjax">
         <input type="hidden" name="location_type" value="code">
         <input type="hidden" name="BUYER_STORE" id="BUYER_STORE" value="<?=$arResult['BUYER_STORE']?>">
-        <input type="hidden" name="confirmorder" id="confirmorder" value="Y">
+        <input type="hidden" name="confirmorder" id="confirmorder" value="N">
         <div id="bx-soa-order" class="row" style="opacity: 1">
             <!--	MAIN BLOCK	-->
             <div class="col-sm-12 bx-soa">
@@ -339,8 +339,8 @@ else
                 <div class="block-body">
                     <label class="form-label">Контактное лицо:</label>
                     <div class="row">
-                        <input type="text" id="soa-property-1" class="form-input half-width bx-soa-customer-input" name="ORDER_PROP_1" value="<?=$arUser['NAME']?>" placeholder="Имя" required>
-                        <input type="text" id="checkout-surname" class="form-input half-width" name="ORDER_PROP_20" value="<?=$arUser['LAST_NAME']?>" placeholder="Фамилия" required>
+                        <input type="text" id="soa-property-1" class="form-input half-width bx-soa-customer-input form-control" name="ORDER_PROP_1" value="<?=$arUser['NAME']?>" placeholder="Имя" required>
+                        <input type="text" id="soa-property-20" class="form-input half-width bx-soa-customer-input form-control" name="ORDER_PROP_20" value="<?=$arUser['LAST_NAME']?>" placeholder="Фамилия" required>
                     </div>
                     <div class="row">
                         <input type="text" id="checkout-email" class="form-input half-width" name="ORDER_PROP_2" value="<?=$arUser['EMAIL']?>" placeholder="Адрес эллектронной почты" required>
@@ -559,7 +559,6 @@ else
             {
                 if (isOrderSaveAllowed())
                 {
-                    // this.reachGoal('order');
                     sendRequest('saveOrderAjax');
                 }
 
