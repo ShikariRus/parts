@@ -261,6 +261,9 @@ ul.arrow{
     &:hover{
       transition: 200ms;
       background: #004FA8;
+      a{
+        color: #fff;
+      }
     }
   }
   a{
@@ -283,6 +286,7 @@ ul.arrow{
     &:hover{
       transition: 200ms;
       background: #004fa8;
+      color: #fff;
     }
   }
   &.transparent{
@@ -669,6 +673,7 @@ a{
 .end-block{
   margin-bottom: 20px;
 }
+
 .form-input{
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
@@ -677,6 +682,7 @@ a{
   outline: none;
   @include col;
   margin-bottom: 10px;
+  width: 100%;
   &::placeholder{
     font-size: 13px;
     color: rgba(0, 0, 0, 0.502);
@@ -694,6 +700,25 @@ a{
   }
   &.end-block{
     margin-bottom: 20px;
+  }
+}
+.order-checkout {
+  .full-width {
+    @include col;
+    @include col-12;
+    .form-input {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  .half-width {
+    @include col;
+    @include col-6;
+    @include col-sm-12;
+    .form-input {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 }
 .form-block{

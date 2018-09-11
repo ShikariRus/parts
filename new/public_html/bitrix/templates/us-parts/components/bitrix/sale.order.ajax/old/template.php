@@ -17,15 +17,15 @@ if($USER->IsAuthorized() || $arParams["ALLOW_AUTO_REGISTER"] == "Y")
 	}
 }
 
-//$APPLICATION->SetAdditionalCSS($templateFolder."/style_cart.css");
-//$APPLICATION->SetAdditionalCSS($templateFolder."/style.css");
+$APPLICATION->SetAdditionalCSS($templateFolder."/style_cart.css");
+$APPLICATION->SetAdditionalCSS($templateFolder."/style.css");
 
 CJSCore::Init(array('fx', 'popup', 'window', 'ajax'));
 ?>
 
 <a name="order_form"></a>
 
-<div class="order-checkout">
+<div id="order_form_div" class="order-checkout">
 <NOSCRIPT>
 	<div class="errortext"><?=GetMessage("SOA_NO_JS")?></div>
 </NOSCRIPT>
@@ -118,8 +118,8 @@ if (!function_exists("cmpBySort"))
 					return true;
 
 				BXFormPosting = true;
-                if (val != 'Y')
-                    BX('confirmorder').value = 'N';
+				if(val != 'Y')
+					BX('confirmorder').value = 'N';
 
 				var orderForm = BX('ORDER_FORM');
 				BX.showWait();
@@ -127,7 +127,7 @@ if (!function_exists("cmpBySort"))
 				<?if(CSaleLocation::isLocationProEnabled()):?>
 					BX.saleOrderAjax.cleanUp();
 				<?endif?>
-                console.log(orderForm);
+
 				BX.ajax.submit(orderForm, ajaxResult);
 
 				return true;
@@ -217,7 +217,9 @@ if (!function_exists("cmpBySort"))
 				include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/delivery.php");
 				include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/paysystem.php");
 			}
-//                include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/related_props.php");
+
+			include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/related_props.php");
+
 			include($_SERVER["DOCUMENT_ROOT"].$templateFolder."/summary.php");
 			if(strlen($arResult["PREPAY_ADIT_FIELDS"]) > 0)
 				echo $arResult["PREPAY_ADIT_FIELDS"];
@@ -231,7 +233,8 @@ if (!function_exists("cmpBySort"))
 					<input type="hidden" name="profile_change" id="profile_change" value="N">
 					<input type="hidden" name="is_ajax_post" id="is_ajax_post" value="Y">
 					<input type="hidden" name="json" value="Y">
-        </form>
+					<div class="bx_ordercart_order_pay_center"><a href="javascript:void();" onclick="submitForm('Y'); return false;" id="ORDER_CONFIRM_BUTTON" class="checkout"><?=GetMessage("SOA_TEMPL_BUTTON")?></a></div>
+				</form>
 				<?
 				if($arParams["DELIVERY_NO_AJAX"] == "N")
 				{

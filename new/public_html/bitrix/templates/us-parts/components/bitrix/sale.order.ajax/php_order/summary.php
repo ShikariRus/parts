@@ -7,6 +7,14 @@ $bUseDiscount = false;
 $bPriceType = false;
 $bShowNameWithPicture = ($bDefaultColumns) ? true : false; // flat to show name and picture column in one column
 ?>
+<div class="block-head">Шаг 4 из 5. <b>Оставьте комментарий</b></div>
+<div class="block-body">
+    <label class="form-label">Ваше дополнение к заказу:</label>
+    <div class="row">
+        <textarea name="ORDER_DESCRIPTION" class="form-input full-width" id="ORDER_DESCRIPTION" style="resize: none;" placeholder="Оставьте комментарий здесь"><?=$arResult["USER_VALS"]["ORDER_DESCRIPTION"]?></textarea>
+        <input type="hidden" name="" value="">
+    </div>
+</div>
 <div class="block-head">Шаг 5 из 5. <b>проверьте корзину</b></div>
 <div class="table-body">
     <? foreach ($arResult['GRID']['ROWS'] as $cart_item){ ?>
@@ -44,4 +52,13 @@ $bShowNameWithPicture = ($bDefaultColumns) ? true : false; // flat to show name 
             </div>
         </div>
     <? } ?>
+</div>
+<div class="checkout-submit">
+    <div class="total">
+        <p>Всего, с учётом доставки:</p>
+        <p class="bold"><span data-total="<?=$arResult['JS_DATA']['TOTAL']['ORDER_PRICE']?>" class="price-total-all"><?=$arResult['JS_DATA']['TOTAL']['ORDER_TOTAL_PRICE_FORMATED']?></span></p>
+    </div>
+    <div id="bx-soa-orderSave">
+        <button type="button" name="save" onclick="submitForm('Y'); return false;" id="ORDER_CONFIRM_BUTTON" class="btn small checkout">Оформить заказ</button>
+    </div>
 </div>

@@ -114,6 +114,7 @@ if ($customPagesList)
         <div class="btn-block">
             <? if ($arParams['SHOW_ORDER_PAGE'] === 'Y') { ?>
                 <button class="btn btn-inline"><a href="<?=$arResult['PATH_TO_ORDERS']?>"><i class="icon order-icon"></i> Заказы</a></button>
+                <button class="btn btn-inline"><a href="/garage">Гараж</a></button>
             <? } ?>
         </div>
     <? } ?>

@@ -54,6 +54,9 @@ if (!function_exists("PrintPropsForm"))
 {
 	function PrintPropsForm($arSource = array(), $locationTemplate = ".default")
 	{
+        global $USER;
+        $rsUser = CUser::GetByID($USER->GetID());
+        $arUser = $rsUser->Fetch();
 		if (!empty($arSource))
 		{
 			?>
@@ -92,6 +95,7 @@ if (!function_exists("PrintPropsForm"))
                     }?>
                         <? if ($arProperties["FIELD_NAME"] == 'ORDER_PROP_7'){ ?>
                         <label style="left: 15px; position: relative;" class="form-label">Адрес доставки:</label>
+<!--                        --><?// $arProperties["VALUE"] = $arUser['UF_ADDRESS'] ?>
                     <? } ?>
                         <?if ($arProperties["TYPE"] == "CHECKBOX")
                     {
@@ -123,12 +127,14 @@ if (!function_exists("PrintPropsForm"))
                         <?
                     }
                     elseif ($arProperties["TYPE"] == "TEXT") {?>
-                    <input  class="form-input <?=$class?>" data-property-id-row="<?=intval(intval($arProperties["ID"]))?>" type="text" value="<?=$arProperties["VALUE"]?>" placeholder="<?=$arProperties["NAME"]?>" name="<?=$arProperties["FIELD_NAME"]?>" id="<?=$arProperties["FIELD_NAME"]?>" />
-                        <?if (strlen(trim($arProperties["DESCRIPTION"])) > 0):?>
-                        <div class="bx_description">
-                            <?=$arProperties["DESCRIPTION"]?>
+                        <div class="<?=$class?>" data-property-id-row="<?=intval(intval($arProperties["ID"]))?>">
+                            <input class="form-input" type="text" value="<?=$arProperties["VALUE"]?>" placeholder="<?=$arProperties["NAME"]?>" name="<?=$arProperties["FIELD_NAME"]?>" id="<?=$arProperties["FIELD_NAME"]?>" />
+                            <?if (strlen(trim($arProperties["DESCRIPTION"])) > 0):?>
+                            <div class="bx_description">
+                                <?=$arProperties["DESCRIPTION"]?>
+                            </div>
+                            <? endif; ?>
                         </div>
-                    <? endif; ?>
                         <?
                     }
                     elseif ($arProperties["TYPE"] == "SELECT")

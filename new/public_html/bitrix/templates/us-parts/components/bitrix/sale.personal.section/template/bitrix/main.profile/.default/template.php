@@ -18,20 +18,20 @@ use Bitrix\Main\Localization\Loc;
                     <input type="hidden" name="lang" value="<?=LANG?>" />
                     <input type="hidden" name="ID" value="<?=$arResult["ID"]?>" />
                     <input type="hidden" name="LOGIN" value="<?=$arResult["arUser"]["LOGIN"]?>" />
-                    <label class="form-label" for="delivery">Способ получения:</label>
-                    <div class="form-radio">
-                        <? foreach ($deliver_array as $deliver_item){ ?>
-                            <? if ($deliver_item['NAME'] != 'Без доставки'){ ?>
-                                <? if ($deliver_item['CONFIG']['MAIN']['PRICE'] != '500'){ ?>
-                                    <label for="delivery_<?=$deliver_item['ID']?>"><input <?=$arResult["USER_PROPERTIES"]["DATA"]["UF_DELIVERY"]["VALUE"] == $deliver_item['NAME'] ? 'checked' : ''  ?> type="radio" id="delivery_<?=$deliver_item['ID']?>" name="UF_DELIVERY" value="<?=$deliver_item['NAME']?>"><?=$deliver_item['NAME']?></label>
-                                <? } ?>
-                            <? } ?>
-                        <? } ?>
-                    </div>
-                    <label class="form-label" for="delivery-address">Адрес доставки:</label>
-                    <div class="row">
-                        <input type="text" id="delivery-address" class="form-input full-width end-block" name="UF_ADDRESS" placeholder="пример: г.Москва Дмитровское шоссе 102к2с3" value="<?=$arResult["USER_PROPERTIES"]["DATA"]["UF_ADDRESS"]["VALUE"]?>" required>
-                    </div>
+<!--                    <label class="form-label" for="delivery">Способ получения:</label>-->
+<!--                    <div class="form-radio">-->
+<!--                        --><?// foreach ($deliver_array as $deliver_item){ ?>
+<!--                            --><?// if ($deliver_item['NAME'] != 'Без доставки'){ ?>
+<!--                                --><?// if ($deliver_item['CONFIG']['MAIN']['PRICE'] != '500'){ ?>
+<!--                                    <label for="delivery_--><?//=$deliver_item['ID']?><!--"><input --><?//=$arResult["USER_PROPERTIES"]["DATA"]["UF_DELIVERY"]["VALUE"] == $deliver_item['NAME'] ? 'checked' : ''  ?><!-- type="radio" id="delivery_--><?//=$deliver_item['ID']?><!--" name="UF_DELIVERY" value="--><?//=$deliver_item['NAME']?><!--">--><?//=$deliver_item['NAME']?><!--</label>-->
+<!--                                --><?// } ?>
+<!--                            --><?// } ?>
+<!--                        --><?// } ?>
+<!--                    </div>-->
+<!--                    <label class="form-label" for="delivery-address">Адрес доставки:</label>-->
+<!--                    <div class="row">-->
+<!--                        <input type="text" id="delivery-address" class="form-input full-width end-block" name="UF_ADDRESS" placeholder="пример: г.Москва Дмитровское шоссе 102к2с3" value="--><?//=$arResult["USER_PROPERTIES"]["DATA"]["UF_ADDRESS"]["VALUE"]?><!--" required>-->
+<!--                    </div>-->
                     <label class="form-label">Контактное лицо:</label>
                     <div class="row">
                         <input type="text" name="NAME" class="form-input half-width" placeholder="Имя"  maxlength="50" id="main-profile-name" value="<?=$arResult["arUser"]["NAME"]?>" required>

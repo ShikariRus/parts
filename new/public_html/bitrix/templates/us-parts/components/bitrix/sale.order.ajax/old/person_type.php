@@ -1,5 +1,4 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<div style="display: none">
 <?
 if(count($arResult["PERSON_TYPE"]) > 1)
 {
@@ -40,4 +39,3 @@ else
 	}
 }
 ?>
-</div>
