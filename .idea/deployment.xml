@@ -1,98 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="On explicit save action" promptOnRemoteOverwrite="CHECK_TIMESTAMP" serverName="us-parts" createEmptyFolders="true" autoUploadExternalChanges="true" notifyRemoteChanges="true">
+  <component name="PublishConfigData" autoUpload="On explicit save action" promptOnRemoteOverwrite="CHECK_TIMESTAMP" serverName="Us-parts" createEmptyFolders="true" autoUploadExternalChanges="true" notifyRemoteChanges="true">
     <serverData>
-      <paths name="us-parts">
+      <paths name="Rummak-web">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Studio">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Us-parts">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
           <excludedPaths>
-            <excludedPath path="/.bash_history" />
+            <excludedPath path="/.viminfo" />
+            <excludedPath path="/s1.us-parts.ru" />
+            <excludedPath path="/.config" />
+            <excludedPath path="/wpusparts_uspart.sql" />
+            <excludedPath path="/wpusparts_flt.sql" />
+            <excludedPath path="/public_html" />
+            <excludedPath path="/us-partz.ru" />
+            <excludedPath path="/.gitignore" />
+            <excludedPath path="/.local" />
+            <excludedPath path="/wpusparts_s1.sql" />
+            <excludedPath path="/.ide" />
             <excludedPath path="/ford-lt.ru" />
             <excludedPath path="/error_log" />
-            <excludedPath path="/wpusparts_flt.sql" />
-            <excludedPath path="/wpusparts_s1.sql" />
-            <excludedPath path="/wpusparts_uspart.sql" />
-            <excludedPath path="/s1.us-parts.ru" />
-            <excludedPath path="/.viminfo" />
-            <excludedPath path="/.selected_editor" />
-            <excludedPath path="/public_html" />
-            <excludedPath path="/.gitignore" />
-            <excludedPath path="/us-partz.ru" />
-            <excludedPath path="/.config" />
-            <excludedPath path="/.local" />
-            <excludedPath path="/access_log" />
-            <excludedPath path="/.ide" />
             <excludedPath path="/.cache" />
+            <excludedPath path="/.bash_history" />
+            <excludedPath path="/.selected_editor" />
+            <excludedPath path="/access_log" />
             <excludedPath path="/new/public_html/desktop_app" />
             <excludedPath path="/new/public_html/upload" />
-            <excludedPath path="/new/public_html/.access.php" />
-            <excludedPath path="/new/public_html/.bottom.menu.php" />
-            <excludedPath path="/new/public_html/.htaccess" />
-            <excludedPath path="/new/public_html/.left.menu.php" />
-            <excludedPath path="/new/public_html/.left.menu_ext.php" />
-            <excludedPath path="/new/public_html/.mobile.menu.php" />
-            <excludedPath path="/new/public_html/.personal.menu.php" />
-            <excludedPath path="/new/public_html/.section.php" />
-            <excludedPath path="/new/public_html/.top.menu.php" />
-            <excludedPath path="/new/public_html/404.php" />
-            <excludedPath path="/new/public_html/favicon.ico" />
-            <excludedPath path="/new/public_html/index.php" />
-            <excludedPath path="/new/public_html/left-column.php" />
-            <excludedPath path="/new/public_html/php.ini" />
-            <excludedPath path="/new/public_html/profile.tpl" />
-            <excludedPath path="/new/public_html/sect_bottom.php" />
-            <excludedPath path="/new/public_html/sect_sidebar.php" />
-            <excludedPath path="/new/public_html/urlrewrite.php" />
-            <excludedPath path="/new/public_html/web.config" />
-            <excludedPath path="/new/public_html/bitrix/fonts" />
-            <excludedPath path="/new/public_html/bitrix/rss.php" />
-            <excludedPath path="/new/public_html/bitrix/index.php" />
-            <excludedPath path="/new/public_html/bitrix/otp" />
-            <excludedPath path="/new/public_html/bitrix/image_uploader" />
-            <excludedPath path="/new/public_html/bitrix/updates" />
-            <excludedPath path="/new/public_html/bitrix/themes" />
-            <excludedPath path="/new/public_html/bitrix/tools" />
-            <excludedPath path="/new/public_html/bitrix/click.php" />
-            <excludedPath path="/new/public_html/bitrix/redirect.php" />
-            <excludedPath path="/new/public_html/bitrix/catalog_export" />
-            <excludedPath path="/new/public_html/bitrix/blocks" />
-            <excludedPath path="/new/public_html/bitrix/site_checker_4cd86c7e0e43dce02b63268a1a23fc33.log" />
-            <excludedPath path="/new/public_html/bitrix/.access.php" />
-            <excludedPath path="/new/public_html/bitrix/images" />
-            <excludedPath path="/new/public_html/bitrix/tmp" />
-            <excludedPath path="/new/public_html/bitrix/php_interface" />
-            <excludedPath path="/new/public_html/bitrix/modules" />
-            <excludedPath path="/new/public_html/bitrix/sounds" />
-            <excludedPath path="/new/public_html/bitrix/p3p.xml" />
-            <excludedPath path="/new/public_html/bitrix/activity_limit.php" />
-            <excludedPath path="/new/public_html/bitrix/web.config" />
-            <excludedPath path="/new/public_html/bitrix/cache" />
-            <excludedPath path="/new/public_html/bitrix/urlrewrite.php" />
-            <excludedPath path="/new/public_html/bitrix/services" />
-            <excludedPath path="/new/public_html/bitrix/.settings.php" />
-            <excludedPath path="/new/public_html/bitrix/spread.php" />
-            <excludedPath path="/new/public_html/bitrix/admin" />
-            <excludedPath path="/new/public_html/bitrix/virtual_file_system.php" />
-            <excludedPath path="/new/public_html/bitrix/license_key.php" />
-            <excludedPath path="/new/public_html/bitrix/header.php" />
-            <excludedPath path="/new/public_html/bitrix/rk.php" />
-            <excludedPath path="/new/public_html/bitrix/js" />
-            <excludedPath path="/new/public_html/bitrix/stack_cache" />
-            <excludedPath path="/new/public_html/bitrix/footer.php" />
             <excludedPath path="/new/public_html/bitrix/gadgets" />
-            <excludedPath path="/new/public_html/bitrix/wizards" />
+            <excludedPath path="/new/public_html/bitrix/web.config" />
+            <excludedPath path="/new/public_html/bitrix/urlrewrite.php" />
+            <excludedPath path="/new/public_html/bitrix/stack_cache" />
+            <excludedPath path="/new/public_html/bitrix/activity_limit.php" />
+            <excludedPath path="/new/public_html/bitrix/click.php" />
+            <excludedPath path="/new/public_html/bitrix/site_checker_4cd86c7e0e43dce02b63268a1a23fc33.log" />
+            <excludedPath path="/new/public_html/bitrix/blocks" />
+            <excludedPath path="/new/public_html/bitrix/activities" />
+            <excludedPath path="/new/public_html/bitrix/.settings.php" />
+            <excludedPath path="/new/public_html/bitrix/image_uploader" />
+            <excludedPath path="/new/public_html/bitrix/virtual_file_system.php" />
+            <excludedPath path="/new/public_html/bitrix/fonts" />
+            <excludedPath path="/new/public_html/bitrix/index.php" />
+            <excludedPath path="/new/public_html/bitrix/cache" />
+            <excludedPath path="/new/public_html/bitrix/template" />
+            <excludedPath path="/new/public_html/bitrix/managed_cache" />
+            <excludedPath path="/new/public_html/bitrix/php_interface" />
+            <excludedPath path="/new/public_html/bitrix/updates" />
+            <excludedPath path="/new/public_html/bitrix/sounds" />
+            <excludedPath path="/new/public_html/bitrix/js" />
+            <excludedPath path="/new/public_html/bitrix/footer.php" />
+            <excludedPath path="/new/public_html/bitrix/redirect.php" />
+            <excludedPath path="/new/public_html/bitrix/spread.php" />
+            <excludedPath path="/new/public_html/bitrix/themes" />
+            <excludedPath path="/new/public_html/bitrix/header.php" />
+            <excludedPath path="/new/public_html/bitrix/services" />
+            <excludedPath path="/new/public_html/bitrix/images" />
             <excludedPath path="/new/public_html/bitrix/coupon_activation.php" />
             <excludedPath path="/new/public_html/bitrix/panel" />
-            <excludedPath path="/new/public_html/bitrix/activities" />
-            <excludedPath path="/new/public_html/bitrix/managed_cache" />
-            <excludedPath path="/new/public_html/bitrix/template" />
+            <excludedPath path="/new/public_html/bitrix/components" />
+            <excludedPath path="/new/public_html/bitrix/.access.php" />
+            <excludedPath path="/new/public_html/bitrix/rss.php" />
+            <excludedPath path="/new/public_html/bitrix/tools" />
+            <excludedPath path="/new/public_html/bitrix/tmp" />
+            <excludedPath path="/new/public_html/bitrix/catalog_export" />
+            <excludedPath path="/new/public_html/bitrix/otp" />
+            <excludedPath path="/new/public_html/bitrix/modules" />
+            <excludedPath path="/new/public_html/bitrix/rk.php" />
+            <excludedPath path="/new/public_html/bitrix/license_key.php" />
+            <excludedPath path="/new/public_html/bitrix/wizards" />
+            <excludedPath path="/new/public_html/bitrix/p3p.xml" />
             <excludedPath path="/new/public_html/bitrix/css_1" />
-            <excludedPath path="/new/public_html/bitrix/components/nodasoft" />
-            <excludedPath path="/new/public_html/bitrix/components/bitrix" />
-            <excludedPath path="/new/public_html/bitrix/components/.access.php" />
-            <excludedPath path="/new/public_html/bitrix/components/tecdoc" />
+            <excludedPath path="/new/public_html/bitrix/admin" />
           </excludedPaths>
         </serverdata>
       </paths>

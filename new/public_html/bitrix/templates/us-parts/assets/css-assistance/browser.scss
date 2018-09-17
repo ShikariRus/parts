@@ -147,3 +147,11 @@ body[data-platform="windows"]{
     font-weight: 300;
   }
 }
+
+body[data-browser="firefox"]{
+  input{
+    &::placeholder{
+      line-height: 1.5 !important;
+    }
+  }
+}

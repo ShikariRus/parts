@@ -96,17 +96,6 @@ Loc::loadMessages(__FILE__); ?>
                     </div>
                 <?} ?>
             </div>
-            <div class="pagination">
-                <a href="#" class="icon"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
-                <a href="#" class="icon"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-                <span class="current">1</span>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#" class="icon"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                <a href="#" class="icon"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-            </div>
         </div>
         <? } ?>
 	<? echo $arResult["NAV_STRING"]; ?>

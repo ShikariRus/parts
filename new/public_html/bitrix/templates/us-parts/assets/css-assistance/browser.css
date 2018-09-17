@@ -1,86 +1,127 @@
 @media screen and (max-width: 768px) {
-  body[data-platform="android"] .search-block .search-form .search-btn {
+  body[data-platform=android] .search-block .search-form .search-btn {
     font-size: 14px;
     padding: 6px 10px;
-    min-height: 32px; } }
-body[data-platform="android"] .login .input-wrap {
+    min-height: 32px;
+  }
+}
+body[data-platform=android] .login .input-wrap {
   display: block;
-  max-width: 85%; }
+  max-width: 85%;
+}
 @media screen and (max-width: 560px) {
-  body[data-platform="android"] footer:before {
-    top: 35px; } }
+  body[data-platform=android] footer:before {
+    top: 35px;
+  }
+}
 @media screen and (max-width: 560px) {
-  body[data-platform="android"] .vin .part-block .select {
-    width: 42%; } }
+  body[data-platform=android] .vin .part-block .select {
+    width: 42%;
+  }
+}
 @media screen and (max-width: 560px) {
-  body[data-platform="android"] .product-list .product-item .right-block .product-stock {
-    font-size: 12px; } }
-body[data-platform="android"] .cart .cart-block .cart-form .table-footer .table-row .right-block .btn-block .btn:first-child {
-  margin-right: 5px; }
+  body[data-platform=android] .product-list .product-item .right-block .product-stock {
+    font-size: 12px;
+  }
+}
+body[data-platform=android] .cart .cart-block .cart-form .table-footer .table-row .right-block .btn-block .btn:first-child {
+  margin-right: 5px;
+}
 @media screen and (max-width: 1200px) {
-  body[data-platform="android"] .btn[type="submit"].small, body[data-platform="android"] .btn[type="button"].small {
+  body[data-platform=android] .btn[type=submit].small, body[data-platform=android] .btn[type=button].small {
     padding: 10px 10px;
-    font-size: 13px; } }
+    font-size: 13px;
+  }
+}
 @media screen and (max-width: 560px) {
-  body[data-platform="android"] .checkout .delivery-item .delivery-icon {
+  body[data-platform=android] .checkout .delivery-item .delivery-icon {
     left: -5px;
-    position: relative; } }
+    position: relative;
+  }
+}
 @media screen and (max-width: 560px) {
-  body[data-platform="android"] .checkout .delivery-item .delivery-description {
+  body[data-platform=android] .checkout .delivery-item .delivery-description {
     left: 10px;
-    position: relative; } }
+    position: relative;
+  }
+}
 @media screen and (max-width: 560px) {
-  body[data-platform="android"] .checkout .checkout-submit p {
-    font-size: 14px; } }
+  body[data-platform=android] .checkout .checkout-submit p {
+    font-size: 14px;
+  }
+}
 @media screen and (max-width: 560px) {
-  body[data-platform="android"] .checkout .checkout-submit p.bold {
-    font-size: 16px; } }
-body[data-platform="android"] .checkout .checkout-submit button {
+  body[data-platform=android] .checkout .checkout-submit p.bold {
+    font-size: 16px;
+  }
+}
+body[data-platform=android] .checkout .checkout-submit button {
   flex: 12;
-  display: inline-block; }
-  @media screen and (max-width: 560px) {
-    body[data-platform="android"] .checkout .checkout-submit button {
-      padding: 10px 5px !important;
-      font-size: 12px !important; } }
+  display: inline-block;
+}
+@media screen and (max-width: 560px) {
+  body[data-platform=android] .checkout .checkout-submit button {
+    padding: 10px 5px !important;
+    font-size: 12px !important;
+  }
+}
 
-body[data-platform="android"][data-browser="opera"] header .mobile-menu.active {
+body[data-platform=android][data-browser=opera] header .mobile-menu.active {
   left: 0;
   right: 0;
-  /* margin: auto 0; */ }
+  /* margin: auto 0; */
+}
 
-body[data-browser="safari"] header .site-title h1.title {
+body[data-browser=safari] header .site-title h1.title {
   font-size: 21px;
-  text-align: center; }
-body[data-browser="safari"] .search-block .search-form .search-btn {
+  text-align: center;
+}
+body[data-browser=safari] .search-block .search-form .search-btn {
   min-height: 35px;
-  top: 0; }
-  @media screen and (max-width: 1024px) {
-    body[data-browser="safari"] .search-block .search-form .search-btn {
-      min-height: 32px;
-      padding: 7px 15px; } }
-body[data-browser="safari"] .search-block input.active::placeholder {
+  top: 0;
+}
+@media screen and (max-width: 1024px) {
+  body[data-browser=safari] .search-block .search-form .search-btn {
+    min-height: 32px;
+    padding: 7px 15px;
+  }
+}
+body[data-browser=safari] .search-block input.active::placeholder {
   line-height: 1.5;
   padding-top: 3px;
   padding-bottom: 8px;
   top: -3px;
-  position: relative; }
-body[data-browser="safari"] input::placeholder {
-  line-height: 1.4; }
-body[data-browser="safari"] .cart .cart-block .cart-form .table-body .table-body-cell.product-quantity .quantity-change {
-  line-height: 22px; }
-body[data-browser="safari"] .cart .cart-block .cart-form .table-body .table-body-cell.product-quantity input {
-  top: 1px; }
-body[data-browser="safari"] .product-list .product-item .right-block .product-quantity .quantity-change {
-  line-height: 22px; }
-body[data-browser="safari"] .product-list .product-item .right-block .product-quantity input {
-  top: 1px; }
-body[data-browser="safari"] .product-page .product-quantity .quantity-change {
-  line-height: 22px; }
-body[data-browser="safari"] .product-page .product-quantity input {
-  top: 1px; }
+  position: relative;
+}
+body[data-browser=safari] input::placeholder {
+  line-height: 1.4;
+}
+body[data-browser=safari] .cart .cart-block .cart-form .table-body .table-body-cell.product-quantity .quantity-change {
+  line-height: 22px;
+}
+body[data-browser=safari] .cart .cart-block .cart-form .table-body .table-body-cell.product-quantity input {
+  top: 1px;
+}
+body[data-browser=safari] .product-list .product-item .right-block .product-quantity .quantity-change {
+  line-height: 22px;
+}
+body[data-browser=safari] .product-list .product-item .right-block .product-quantity input {
+  top: 1px;
+}
+body[data-browser=safari] .product-page .product-quantity .quantity-change {
+  line-height: 22px;
+}
+body[data-browser=safari] .product-page .product-quantity input {
+  top: 1px;
+}
 
-body[data-platform="windows"] .thin {
+body[data-platform=windows] .thin {
   font-family: Roboto Light, sans-serif;
-  font-weight: 300; }
+  font-weight: 300;
+}
+
+body[data-browser=firefox] input::placeholder {
+  line-height: 1.5 !important;
+}
 
 /*# sourceMappingURL=browser.css.map */
